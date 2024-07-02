@@ -3,6 +3,10 @@ import pandas as pd
 from email.message import EmailMessage
 import ssl
 import smtplib
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # starter data
 data_csv = pd.read_csv("data.csv")
@@ -23,8 +27,11 @@ def check_data_time(user_time, time_now):
 def send_email(email, name):
     global struck
 
-    email_sender = "komronhtmlcss@gmail.com"
-    email_password = "mcxs chux adtg kwwh"
+    email_sender = os.environ.get("EMAIL")
+    email_password = os.environ.get("TOKEN")
+
+    # email_sender = "komronhtmlcss@gmail.com"
+    # email_password = "mcxs chux adtg kwwh"
 
     email_receiver = email
 
