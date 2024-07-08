@@ -30,9 +30,6 @@ def send_email(email, name):
     email_sender = os.environ.get("EMAIL")
     email_password = os.environ.get("TOKEN")
 
-    # email_sender = "komronhtmlcss@gmail.com"
-    # email_password = "mcxs chux adtg kwwh"
-
     email_receiver = email
 
     subject = f"Salom {name}"
